@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
+    <!-- uncomment lines below to include extra p5 libraries -->
+    <!--<script language="javascript" src="libraries/p5.dom.js"></script>-->
+    <!--<script language="javascript" src="libraries/p5.sound.js"></script>-->
+    <script language="javascript" type="text/javascript" src="Cell.js"></script>
+    <script language="javascript" type="text/javascript" src="ExtendedCells.js"></script>
+    <script language="javascript" type="text/javascript" src="Pathfinder.js"></script>
+    <script language="javascript" type="text/javascript" src="App.js"></script>
+    <script language="javascript" type="text/javascript" src="Main.js"></script>
+    <!-- this line removes any default padding and style. you might only need one of these values set. -->
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: black;
+        color: white;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-evenly;
+        align-items: center;
+        
+        -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+        -moz-user-select: none; /* mozilla browsers */
+        -khtml-user-select: none; /* webkit (konqueror) browsers */
+        -ms-user-select: none; /* IE10+ */
+      }
+
+      button {
+        background: #DDD;
+        border: 1px gray solid;
+        border-radius: .5em;
+
+        padding: .5em 1em;
+
+        font-size: 1em;
+        font-weight: bold;
+      }
+      button:hover {
+        background: #AAA;
+        cursor: pointer;
+      }
+      button:active{
+        background: #CCC;
+      }
+      button:focus {
+        outline: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <input type="checkbox" id="diag" checked="checked" onClick="APP.pathfinder.allowDiagonals = this.checked">
+      <label for="diag">Allow Diagonals</label>
+      <button onClick="APP.findRoute()">SEARCH ROUTE</button>
+      <button onClick="APP.route = null">RESET ROUTE</button>
+    </div>
+  </body>
+</html>
